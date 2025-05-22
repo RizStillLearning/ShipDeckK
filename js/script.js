@@ -21,6 +21,10 @@ function isValidPhoneNumber(phone){
   return true;
 }
 
+function checkPassword(password){
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   event.preventDefault();
   
@@ -91,6 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
         emailError.style.opacity = '0';
       }
 
+      // Check password field
+      const passwordField = document.getElementById('password');
+      const passwordError = document.getElementById('passwordError');
+
+      if(passwordField.value.trim() !== '')
+        touchedFields[passwordField.id] = true;
+
+      if(passwordField.value.trim() === '' || passwordField.value.length < 8 || password.length > 20) {
+        allFilled = false;
+        if(touchedFields[passwordField.id]) {
+          passwordField.style.border = '1px solid red';
+          passwordError.style.opacity = '1';
+        }
+      }
+      else if(touchedFields[passwordField.id]) {
+        passwordField.style.border = '1px solid green';
+        passwordError.style.opacity = '0';
+      }
+
       // Check phone field
       const phoneField = document.getElementById('phone');
       const phoneError = document.getElementById('phoneError');
@@ -116,24 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if(!maleChecked && !femaleChecked)
         allFilled = false;
-
-      // Check interests field
-      const interestField = document.getElementById('interest');
-      const interestError = document.getElementById('interestError');
-
-      if(interestField.value.trim() !== '')
-        touchedFields[interestField.id] = true;
-      else
-        allFilled = false;
-
-      if(interestField.value.trim() === '' && touchedFields[interestField.id]) {
-        interestField.style.border = '1px solid red';
-        interestError.style.opacity = '1';
-      }
-      else if(touchedFields[interestField.id]) {
-        interestField.style.border = '1px solid green';
-        interestError.style.opacity = '0';
-      }
 
       // If all fields are filled, enable the checkbox
       if(allFilled) {

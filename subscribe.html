@@ -50,6 +50,13 @@
             <input type="email" id="email" name="email" placeholder="name@example.com" required>
             <small id="emailError" class="error-message">Please enter a valid email address.</small>
           </div>
+
+          <div class="form-attribute password-input">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <small id="passwordError" class="error-message">Please enter a password (8-20 characters).</small>
+            </small>
+          </div>
         
           <div class="form-attribute phone-input">
             <label for="phone">Phone Number</label>
@@ -71,18 +78,6 @@
             </div>
             <small id="genderError" class="error-message">Please select your gender.</small>
           </div>  
-
-          <div class="form-attribute interest-input">
-            <label for="interest">Interested In</label>
-            <select id="interest" name="interest" required>
-              <option value="">-- Select an option --</option>
-              <option value="yachts">Leisure Yachts</option>
-              <option value="cargo">Cargo Ships</option>
-              <option value="liners">Luxury Liners</option>
-              <option value="custom">Custom Builds</option>
-            </select>
-            <small id="interestError" class="error-message">Please select your interest.</small>
-          </div>
 
           <label class="robot-check">
               <input type="checkbox" id="notRobot" disabled>
