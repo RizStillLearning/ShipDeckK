@@ -21,10 +21,6 @@ function isValidPhoneNumber(phone){
   return true;
 }
 
-function checkPassword(password){
-
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   event.preventDefault();
   
